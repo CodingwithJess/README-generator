@@ -1,0 +1,24 @@
+{
+  "name": "README-generator",
+  "version": "1.0.0",
+  "description": "a command-line app that will dynamically generate a README.md from users input",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^7.3.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingwithJess/README-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodingwithJess/README-generator/issues"
+  },
+  "homepage": "https://github.com/CodingwithJess/README-generator#readme"
+}
