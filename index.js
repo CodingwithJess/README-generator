@@ -44,14 +44,51 @@ function promptUser(){
     },
     {
       type: "input",
-      name: "Questions",
+      name: "username",
       message: "What is your Github username?"
+    },
+    {
+      type: "input",
+      name: "repo",
+      message: "What is the Github repository name for this site?"
     },
   ])
 }
 
 function generateReadMe(answers){
   return `
+  /gitHub/license/${answers.username}/${answers.repo}
+
+  # ${answers.title}
+
+  ## Description 
+  ${answers.description}
+
+  ## Table of Contents
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Credits](#credits)
+  * [License](#license)
+  * [Contributing](#contributing)
+  * [Tests](#tests)
+  * [Questions](#questions) 
+  
+  ## Installation
+  ${answers.install}
+
+  ## Usage 
+  ${answers.usage}
+  ## License
+  This site is covered under ${answers.license}
+  
+  ## Contributing
+  ${answers.contributing}
+
+  ## Tests
+  ${answers.tests}
+  
+  ## Questions?
+  https://github.com/${answers.username}
 
   `
 }
