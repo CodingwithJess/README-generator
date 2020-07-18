@@ -13,29 +13,57 @@ function promptUser(){
     },
     {
       type: "input",
-      name: "deployedSite",
-      message: "What is the link to your deployed site?"
-    },
-    {
-      type: "input",
       name: "description",
-      message: "What is a quick description of your site?"
+      message: "What is the description of your site?"
     },
     {
       type: "input",
-      name: "instructions",
-      message: "What instructions does the user need to use this site?"
+      name: "install",
+      message: "What are the steps required to install your site?"
     },
     {
       type: "input",
-      name: "languages",
-      message: "What is your project title?"
+      name: "usage",
+      message: "Provide instructions and examples for use:"
+    },
+    {
+      type: "list",
+      name: "license",
+      message: "What license would you like to use?",
+      choices: ["MIT" , "ISC", "Apache 2.0","GNU General Public v3.0"]
     },
     {
       type: "input",
-      name: "image",
-      message: "What is the filepath for an image of your deployed site?"
+      name: "contributing",
+      message: "If you would like other developers to contribute, what guidelines would you like them to follow?"
+    },
+    {
+      type: "input",
+      name: "tests",
+      message: "Please provide examples of how to run tests of your site:"
+    },
+    {
+      type: "input",
+      name: "Questions",
+      message: "What is your Github username?"
     },
   ])
 }
 
+function generateReadMe(answers){
+  return `
+
+  `
+}
+
+promptUser()
+  .then(function(answers){
+    const readMe = generateReadMe(answers);
+    return writeFileAsync("README.md", readMe);
+  })
+  .then(function(){
+    console.log("Successfully wrote to README.md");
+  })
+  .catch(function(err){
+    console.log(err)
+  });
