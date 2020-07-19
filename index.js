@@ -30,7 +30,7 @@ function promptUser(){
       type: "list",
       name: "license",
       message: "What license would you like to use?",
-      choices: ["MIT" , "ISC", "Apache 2.0","GNU General Public v3.0"]
+      choices: ["MIT" , "ISC", "Apache 2.0"]
     },
     {
       type: "input",
@@ -55,9 +55,26 @@ function promptUser(){
   ])
 }
 
+// function licenseType (answers){
+//   let result;
+//   if (answers.license === "MIT"){
+
+//   }
+//   if (answers.license === "ISC"){
+
+//   }
+//   if (answers.license === "Apache 2.0"){
+
+//   }
+//   else (console.log("Please select a license type."))
+
+//   return result;
+// }
+
+
 function generateReadMe(answers){
   return `
-  /gitHub/license/${answers.username}/${answers.repo}
+  ![GitHub](https://img.shields.io/github/license/${answers.username}/${answers.repo}?style=plastic)
 
   # ${answers.title}
 
