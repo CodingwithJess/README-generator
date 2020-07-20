@@ -49,32 +49,25 @@ function promptUser(){
     },
     {
       type: "input",
+      name: "email",
+      message: "What is your email address?"
+    },
+    {
+      type: "input",
       name: "repo",
       message: "What is the Github repository name for this site?"
     },
   ])
 }
 
-// function licenseType (answers){
-//   let result;
-//   if (answers.license === "MIT"){
-
-//   }
-//   if (answers.license === "ISC"){
-
-//   }
-//   if (answers.license === "Apache 2.0"){
-
-//   }
-//   else (console.log("Please select a license type."))
-
-//   return result;
-// }
+function licenseType (license){
+return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)
+`
+}
 
 
 function generateReadMe(answers){
-  return `
-  ![GitHub](https://img.shields.io/github/license/${answers.username}/${answers.repo}?style=plastic)
+  return `${licenseType(answers.license)}
 
   # ${answers.title}
 
@@ -106,6 +99,7 @@ function generateReadMe(answers){
   
   ## Questions?
   https://github.com/${answers.username}
+  Email me here: ${answers.email}
 
   `
 }
